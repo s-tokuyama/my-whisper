@@ -1,15 +1,16 @@
 #!/bin/bash
 
+# Install ffmpeg
+echo "Installing ffmpeg..."
+sudo apt-get update && sudo apt-get install -y ffmpeg
+
 # Install uv package manager
 echo "Installing uv package manager..."
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Source cargo environment to make uv available
-source $HOME/.cargo/env
-
 # Create and activate virtual environment
 echo "Creating virtual environment..."
-uv venv
+uv venv --clear
 
 # Activate virtual environment
 echo "Activating virtual environment..."
